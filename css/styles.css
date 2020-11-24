@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    background-color: #1e2b3d;
+}
+
+
+/* UTILITIES */
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.opa-05 {
+    opacity: .4;
+}
+
+/* header */
+.app-header{
+    padding: 10px 20px 10px 10px;
+    background-color: #2b3d57;
+    height: 88px;
+} 
+
+.app-header img {
+    height: 70px;
+    max-height: 70px;
+}
+
+/* main */
+/* filter */
+.filter-container {
+    padding-top: 40px;
+}
+
+.filter-container p {
+    padding-right: 10px;
+}
+
+.filter-container select {
+    width: 70px;
+}
+
+/* cd list */
+.cd-list {
+    padding: 50px 10px;
+    list-style: none;
+}
+
+.cd-list .cd {
+    flex-basis: 200px;
+    padding: 10px;
+    margin: 10px 20px;
+    background-color: #2e3a46;
+    min-height: 400px;
+}
+
+.cd-list .cd img {
+    max-width: 100%;
+    min-height: 200px;
+    padding: 10px;
+}
+
+.cd-list li div {
+    padding-bottom: 10px;
+}
+
+.cd-list li h3 {
+    padding-bottom: 10px;
+}
+
+
+/* loader animation */
+.loader-container {
+    padding-top: 50px;
+}
+
+.loader {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

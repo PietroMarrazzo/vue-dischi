@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+    <title>Vue dischi</title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="app-header">
+            <img src="./img/logo.png" alt="logo spotify">
+        </header>
+
+        <main>
+
+            <div class="filter-container d-flex txt-center">
+                <p>Seleziona il tuo genere preferito</p>
+                <select v-model="actualGenre" @change="filterGenre">
+                    <option value="all">All</option>
+                    <option value="rock">Rock</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="metal">Metal</option>
+                    <option value="pop">Pop</option>
+                </select>
+            </div>
+            
+            <div class="cds-container">
+                <ul class="cd-list d-flex" v-if="cds.length > 0">
+                    <li v-for="cd in cds" class="cd txt-center">
+                        <div class="img-wrapper">
+                            <img :src="cd.poster" :alt="cd.title">
+                        </div>  
+                        <h3 class="title">{{ cd.title }}</h3>
+                        <div class="author opa-05">{{ cd.author }}</div>
+                        <div class="year opa-05">{{ cd.year }}</div>
+                        <div class="genre">{{ cd.genre }}</div>
+                    </li>
+                </ul>
+                <div v-else class="loader-container txt-center">
+                    <i class="fas fa-spinner loader"></i>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+   
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js" integrity="sha512-C2m821NxMpJ4Df47O4P/17VPqt0yiK10UmGl59/e5ynRRYiCSBvy0KHJjhp2XIjUJreuR+y3SIhVyiVilhCmcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/locale/it.min.js" integrity="sha512-phkVsg58Vew4wUU/r26xmmcziH8AaEgdySp+pUdGUQerHGrK1jaqXCDI7/ezobI2jBqu6vMTV0CTwQrKNbEMNw==" crossorigin="anonymous"></script>
+</body>
+</html>
